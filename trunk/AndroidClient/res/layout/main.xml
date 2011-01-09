@@ -3,10 +3,28 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
+   >
+<TextView
+    android:id="@+id/IPAddressLabel"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Enter an IP address"
     />
+<EditText
+    android:id="@+id/IPAddressInputField"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    />
+<Button
+    android:id="@+id/StartSyncButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Start Sync"
+    />
+<Button
+    android:id="@+id/ExitSyncClientButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Exit Sync Client"
+    />   
 </LinearLayout>
