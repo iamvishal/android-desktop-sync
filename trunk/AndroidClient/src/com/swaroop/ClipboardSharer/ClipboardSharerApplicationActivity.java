@@ -17,8 +17,9 @@ import android.widget.EditText;
 
 public class ClipboardSharerApplicationActivity extends Activity {
 
-	static String cachedDeviceClipBoard;
-	static String cachedDesktopClipBoard;
+	static String cachedDeviceClipBoard = "";
+	static String cachedDesktopClipBoard = "";
+	
 	static boolean clientThreadAliveToggle = true;
 	private static Button startSyncButton;
 	private static EditText editText;
