@@ -17,8 +17,8 @@ public class JavaDesktopClipboardAccessServer {
 
 	static ServerSocket serverSocket;
 
-	static String cachedDesktopClipboard;
-	static String cachedMobileClipboard;
+	static String cachedDesktopClipboard = "";
+	static String cachedMobileClipboard = "";
 
 	/**
 	 * @param args
