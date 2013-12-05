@@ -12,7 +12,11 @@ import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-
+/**
+ * Server Java Clipboard Access Server (This is not a standalone tool and will require the Mobile Client)
+ * @author swaroop
+ *
+ */
 public class JavaDesktopClipboardAccessServer {
 
 	static ServerSocket serverSocket;
@@ -56,7 +60,7 @@ public class JavaDesktopClipboardAccessServer {
 		Transferable contents = clipboard.getContents(null);
 		String clipBoardContent = ((String) contents.getTransferData(DataFlavor.stringFlavor));
 		
-		System.out.println("Text in the clipboard is " + clipBoardContent);
+		System.out.println("Text in the Desktop clipboard is " + clipBoardContent);
 		return clipBoardContent;
 	}
 
@@ -64,6 +68,9 @@ public class JavaDesktopClipboardAccessServer {
 		try {
 			String latestDesktopClipboard = readClipBoard();
 			boolean isDesktopClipboardAlreadyInSync = cachedDesktopClipboard.equals(latestDesktopClipboard);
+			if(!isDesktopClipboardAlreadyInSync) {
+				cachedDesktopClipboard = latestDesktopClipboard;
+			}
 			System.out.println("Server clipboard is " + (isDesktopClipboardAlreadyInSync  ? "not" : "") + " modified" );
 			return isDesktopClipboardAlreadyInSync;
 		} catch (UnsupportedFlavorException e) {
